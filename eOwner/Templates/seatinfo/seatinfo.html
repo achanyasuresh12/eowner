@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--{% include "complaint/header.html" %}-->
+<body>
+<form method="post">
+    {% csrf_token %}
+    <h3 font-color="pink" align="center">Seat Info</h3>
+    <br>
+
+    <table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+<tr>
+                    <td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+
+        <tr>
+
+        <tr>
+            <td>
+                Bus Id :
+            </td>
+            <td>
+                {{ form.bus_id }}
+            </td>
+        </tr>
+        <tr>
+                    <td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+
+        <tr>
+         <tr>
+            <td>
+                Seat Number :
+            </td>
+            <td>
+                {{ form.seat_name }}
+            </td>
+        </tr>
+        <tr>
+                    <td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+
+        <tr>
+        <tr>
+        <td></td>
+            <td>
+                <input type="submit" name="submit" value="SUBMIT" >
+
+            </td>
+        </tr>
+    </table>
+</form>
+<br>
+<br>
+<br>
+ {% for obj in data %}
+<table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+
+    <tr><td>seat id</td> <td>{{ obj.id }}</td></tr>
+    <tr> <td>Bus Id</td> <td>{{ obj.bus_id }}</td></tr>
+    <tr> <td>Seat Number</td> <td>{{ obj.seat_name }}</td></tr>
+    <tr> <td>Rate</td> <td>{{ obj.rate }}</td></tr>
+    {% endfor %}
+</table>
+
+</body>
+{% include "footer.html" %}
+</html>

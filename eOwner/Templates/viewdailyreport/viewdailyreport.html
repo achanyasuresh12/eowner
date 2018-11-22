@@ -1,0 +1,46 @@
+{% load static %}
+<html lang="en">
+<head>
+
+</head>
+{% include "viewdailyreport/adminheader.html" %}
+<br>
+<br>
+<br>
+
+<body>
+
+ {% for obj in data %}
+ <table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+     <tr><td>Bus id</td><td>{{ obj.id }}</td></tr>
+     <tr><td>Date</td><td>{{ obj.date }}</td></tr>
+     <tr><td>Total Collection</td><td>{{ obj.totalcollection }}</td></tr>
+     <tr><td>Wages</td><td>{{ obj.wages }}</td></tr>
+     <tr><td>Fuel Quantity</td><td>{{ obj.fuel_quantity }}</td></tr>
+     <tr><td>Fuel Price</td>  <td>{{ obj.fuel_price }}</td></tr>
+     <tr><td>Fuel Total</td> <td>{{ obj.fuel_total }}</td></tr>
+     <tr><td>Company Name </td><td>{{ obj.company }}</td></tr>
+     <tr><td>Company Address </td><td>{{ obj.address }}</td></tr>
+     <tr><td>Company Phone </td><td>{{ obj.phone }}</td></tr>
+     <tr><td>Extra Charge </td><td>{{ obj.extra_charge }}</td></tr>
+     <tr><td>Tyre Charge </td><td>{{ obj.tyre_charge }}</td></tr>
+     <tr><td>Spare Parts </td><td>{{ obj.spare_parts }}</td></tr>
+     <tr><td>Other Expenses </td><td>{{ obj.other_expenses }}</td></tr>
+      <tr><td>Net Balance </td><td>{{ obj.net_balance }}</td></tr>
+      <tr><td>Staff Details </td><td>{{ obj.staff_det }}</td></tr>
+
+      </table>
+ <br>
+ <br>
+ <br>
+
+ {% endfor %}
+
+
+
+</body>
+<br>
+<br>
+<br>
+{% include "footer.html" %}
+</html>

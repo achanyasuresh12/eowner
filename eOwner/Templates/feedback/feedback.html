@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{% include "feedback/header.html" %}
+<body>
+<form method="post">
+    {% csrf_token %}
+    <h3 font-color="red" align="center">FEEDBACK</h3>
+
+    <table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+<tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+            <tr>
+                <td>
+                    Bus Id :
+                </td>
+                <td>
+                    {{ form.bus_id }}
+                </td>
+            </tr>
+        <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+        <br>
+        <tr>
+               <td>
+                   Feedback Content :
+               </td>
+               <td>
+                  {{ form.feedbackcontent }}
+               </td>
+           </tr>
+        <br><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="submit" name="submit" value="SUBMIT">
+
+                    <input type="submit" name="submit" value="RESET">
+                </td>
+            </tr>
+    </table>
+</form>
+<br>
+<br>
+<br>
+{% for obj in data %}
+ <table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+    <tr>
+     <tr> <td>Feedback id</td> <td>{{ obj.id }}</td></tr>
+     <tr>  <td>Feedback content</td><td>{{ obj.feedbackcontent }}</td></tr>
+     <tr>  <td>Bus id</td><td>{{ obj.bus_id }}</td></tr>
+     <tr><td><a href="{% url 'feedback:edit_feedback' pk=obj.id %}">Edit</a></td>
+         <td><a href="{% url 'feedback:delete_feedback' pk=obj.id %}">Delete</a></td></tr>
+
+    {% endfor %}
+</table>
+
+</body>
+{% include "footer.html" %}
+</html>

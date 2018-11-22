@@ -1,0 +1,87 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+{% include "viewseatdet/header.html" %}
+
+<body>
+<form method="post">
+    {% csrf_token %}
+    <h3 align="center">Passenger Details</h3>
+        <table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+            <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+        <tr>
+            <td>
+                Name :
+            </td>
+            <td>
+                {{ form.custname }}
+            </td>
+        </tr>
+            <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+        <tr>
+            <td>
+                Age :
+            </td>
+            <td>
+                {{ form.custage}}
+            </td>
+        </tr>
+            <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+        <tr>
+            <td>
+                Gender :
+            </td>
+            <td>
+                {{ form.custgender }}
+            </td>
+        </tr>
+            <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+        <tr>
+            <td>
+                Email :
+            </td>
+            <td>
+                {{ form.custemail }}
+            </td>
+        </tr>
+            <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+        <tr>
+            <td>
+                Contact :
+            </td>
+            <td>
+                {{ form.custcontact }}
+            </td>
+        </tr>
+
+            <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+
+
+        <tr>
+            <td>
+
+            </td>
+            <td>
+                <tr>
+            <td>
+                <td><input type="submit" name="submit" value="Submit" >
+        </td>
+            <tr>
+            <td>
+                <td>
+            <td><a href="{% url 'paymentmeth:payment' %}">Next</a>
+        </td>
+        </tr>
+    </table>
+</form>
+</body>
+<br>
+<br>
+<br>
+
+    {% include "footer.html" %}
+</html>

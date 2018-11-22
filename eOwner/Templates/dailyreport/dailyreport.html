@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     {% include "managerhomepage/managerheader.html" %}
+</head>
+<body bgcolor="pink">
+<form method="post">
+    {% csrf_token %}
+     <h1 align="center">DAILY REPORT</h1>
+    <table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+        <tr>
+                    <td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+
+        <tr>
+        <tr>
+            <td>
+                Bus Id :
+            </td>
+            <td>
+                {{ form.bus_id }}
+            </td>
+        </tr>
+        <tr>
+                    <td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+
+        <tr>
+        <tr>
+            <td>
+                Date :
+            </td>
+            <td>
+                {{ form.date }}
+
+            </td>
+        </tr>
+        <tr>
+                    <td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+
+        <tr>
+        <tr>
+            <td>
+                Total Collection :
+            </td>
+            <td>
+                {{ form.totalcollection }}
+            </td>
+        </tr>
+        <tr>
+                    <td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+
+        <tr>
+        <tr>
+            <td>
+                Wages :
+            </td>
+            <td>
+                {{ form.wages }}
+            </td>
+        </tr>
+        <tr>
+                    <td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+
+        <tr>
+        <tr>
+            <td>
+                Fuel Quantity :
+            </td>
+            <td>
+                {{ form.fuel_quantity }}
+            </td>
+        </tr>
+        <tr>
+                    <td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+
+        <tr>
+        <tr>
+            <td>
+                Fuel Price :
+            </td>
+            <td>
+                {{ form.fuel_price }}
+            </td>
+        </tr>
+        <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+
+
+
+        <tr>
+            <td>
+                Company Name :
+
+            </td>
+            <td>
+                {{ form.company }}
+            </td>
+        </tr>
+        <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+        <tr>
+            <td>
+                Address :
+            </td>
+            <td>
+                {{ form.address }}
+            </td>
+        </tr>
+        <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+        <tr>
+
+            <td>
+                Phone :
+            </td>
+            <td>
+                {{ form.phone }}
+            </td>
+        </tr>
+<tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+        <tr>
+            <td>
+                Extra Charge :
+            </td>
+            <td>
+                {{ form.extra_charge }}
+            </td>
+        </tr>
+        <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+        <tr>
+            <td>
+            Tyre Charge :
+            </td>
+            <td>
+                {{ form.tyre_charge }}
+            </td>
+        </tr>
+        <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+        <tr>
+            <td>
+                Spare Parts :
+            </td>
+            <td>
+                {{ form.spare_parts }}
+            </td>
+        </tr>
+        <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+        <tr>
+            <td>
+                Other Expenses :
+            </td>
+            <td>
+                {{ form.other_expenses }}
+            </td>
+        </tr>
+        <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+
+        <tr>
+            <td>
+                Staff Details
+            </td>
+            <td>
+                {{ form.staff_det }}
+            </td>
+        </tr>
+        <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" name="submit" value="INSERT">
+
+                <input type="submit" name="submit" value="RESET">
+            </td>
+        </tr>
+    </table>
+</form>
+    <table border="1" align="center">
+    <tr>
+        <td>Report id</td>
+        <td>Bus id</td>
+        <td>Date</td>
+        <td> Total Collection</td>
+        <td> Wages</td>
+        <td>Fuel Quantity </td>
+        <td>Fuel Price</td>
+        <td>Fuel Total</td>
+        <td>Company</td>
+        <td>Address</td>
+        <td>Phone</td>
+        <td>Extra Charge</td>
+        <td>Tyre Charge</td>
+        <td>Spare Parts</td>
+        <td>Other Expenses</td>
+        <td>Net Balance</td>
+        <td>Staff Details</td>
+        <td>Edit/Delete</td>
+    </tr>
+    {% for obj in data %}
+    <tr>
+        <td>{{ obj.id }}</td>
+        <td>{{ obj.bus_id }}</td>
+        <td>{{ obj.date }}</td>
+        <td>{{ obj.totalcollection }}</td>
+        <td>{{ obj.wages }}</td>
+        <td>{{ obj.fuel_quantity }}</td>
+        <td>{{ obj.fuel_price }}</td>
+        <td>{{ obj.fuel_total }}</td>
+        <td>{{ obj.company }}</td>
+        <td>{{ obj.address }}</td>
+        <td>{{ obj.phone }}</td>
+        <td>{{ obj.extra_charge }}</td>
+        <td>{{ obj.tyre_charge }}</td>
+        <td>{{ obj.spare_parts }}</td>
+        <td>{{ obj.other_expenses }}</td>
+        <td>{{ obj.net_balance }}</td>
+        <td>{{ obj.staff_det }}</td>
+        <td>
+            <a href="{% url 'dailyrepo:edit_dailyrep' pk=obj.id %}">edit</a>
+            <a href="{% url 'dailyrepo:delete_dailyrep' pk=obj.id %}">delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+{% include "footer.html" %}
+</html>

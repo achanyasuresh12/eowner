@@ -1,0 +1,37 @@
+{% load static %}
+<html lang="en">
+<head>
+</head>
+{% include "viewseatdet/header.html" %}
+<body>
+
+ {% for obj in data %}
+ <table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+     <tr><td>Seat id</td><td>{{ obj.id }}</td></tr>
+     <tr><td>Seat Name</td><td>{{ obj.Seat_name }}</td></tr>
+     <tr><td>Rate</td><td>{{ obj.rate }}</td></tr>
+     <tr><td>status</td><td>{{ obj.status }}</td></tr>
+<tr>
+         <td>
+             <a href="{% url 'viewseatdetails:verify_details' pk=obj.id %}">Book seat</a>
+         </td>
+     </tr>
+      </table>
+ <br>
+ <br>
+ <br>
+
+
+
+
+
+    {% endfor %}
+
+
+
+</body>
+<br>
+<br>
+<br>
+{% include "footer.html" %}
+</html>

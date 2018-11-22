@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    <h1 align="center">STAFF DETAILS</h1>
+    <table align="center">
+           <tr>
+               <td>
+                    Name :
+               </td>
+               <td>
+                  {{ form.empname }}
+               </td>
+           </tr>
+            <tr>
+                <td>
+                    House :
+                </td>
+                <td>
+                    {{ form.emphouse }}
+                </td>
+            </tr>
+        <tr>
+            <td>
+                Place :
+            </td>
+            <td>
+                {{ form.empplace }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                City :
+            </td>
+            <td>
+                {{ form.empcity }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Email :
+            </td>
+            <td>
+                {{ form.empemail }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Gender :
+            </td>
+            <td>
+                {{ form.empgender }}
+            </td>
+            <tr>
+        <td>
+            DOB :
+        </td>
+        <td>
+            {{ form.empdob }}
+        </td>
+        </tr>
+        <tr>
+            <td>
+                Contact :
+            </td>
+            <td>
+                {{ form.empcontact }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Date Of Join
+            </td>
+            <td>
+                {{ form.empdate_of_join }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Qualification :
+            </td>
+            <td>
+                {{ form.empqualification }}
+            </td>
+        </tr>
+         <tr>
+            <td>
+                Licence Number
+            </td>
+            <td>
+                {{ form.emp_licence_number }}
+            </td>
+        </tr>
+         <tr>
+            <td>
+               License Validity
+            </td>
+            <td>
+                {{ form.licence_validity }}
+            </td>
+        </tr>
+            <tr>
+                <td>
+                    <input type="submit" name="submit" value="Add">
+                </td>
+            </tr>
+    </table>
+</form>
+</body>
+</html>

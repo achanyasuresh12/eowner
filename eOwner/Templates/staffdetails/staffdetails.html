@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    <h1 align="center">STAFF DETAILS</h1>
+    <table align="center">
+           <tr>
+               <td>
+                    Name :
+               </td>
+               <td>
+                  {{ form.name }}
+               </td>
+           </tr>
+            <tr>
+                <td>
+                    House :
+                </td>
+                <td>
+                    {{ form.house }}
+                </td>
+            </tr>
+        <tr>
+            <td>
+                Place :
+            </td>
+            <td>
+                {{ form.place }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                City :
+            </td>
+            <td>
+                {{ form.city }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Email :
+            </td>
+            <td>
+                {{ form.email }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Gender :
+            </td>
+            <td>
+                {{ form.gender }}
+            </td>
+            <tr>
+        <td>
+            DOB :
+        </td>
+        <td>
+            {{ form.dob }}
+        </td>
+        </tr>
+        <tr>
+            <td>
+                Age :
+            </td>
+            <td>
+                {{ form.age }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Contact :
+            </td>
+            <td>
+                {{ form.contact }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Date Of Join
+            </td>
+            <td>
+                {{ form.date_of_join }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Status :
+            </td>
+            <td>
+                {{ form.status }}
+            </td>
+        </tr>
+            <tr>
+                <td>
+                    <input type="submit" name="submit" value="INSERT">
+                </td>
+            </tr>
+    </table>
+</form>
+</body>
+</html>

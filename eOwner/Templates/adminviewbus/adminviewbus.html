@@ -1,0 +1,36 @@
+{% load static %}
+<html lang="en">
+<head>
+
+</head>
+
+<br>
+<br>
+<br>
+
+<body>
+
+ {% for obj in data %}
+ <table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+     <tr><td>Bus id</td><td>{{ obj.id }}</td></tr>
+     <tr>  <td>Bus Name</td><td>{{ obj.name }}</td></tr>
+     <tr>  <td>Source</td>  <td>{{ obj.source }}</td></tr>
+     <tr>    <td>Destination</td> <td>{{ obj.destination }}</td></tr>
+     <tr><td>Seat </td><td>{{ obj.seat }}</td></tr>
+
+
+      </table>
+ <br>
+ <br>
+ <br>
+
+ {% endfor %}
+
+
+
+</body>
+<br>
+<br>
+<br>
+{% include "footer.html" %}
+</html>

@@ -1,0 +1,44 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+         {% include "login/adminheader.html" %}
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    <h3 align="center">Admin Login</h3>
+    <table align="center" width="30%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 15px 0 rgba(0,0,0,0.19)">
+        <tr>
+                    <td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+
+        <tr>
+            <td>Username</td>
+            <td>{{form.username}}</td>
+        </tr>
+        <tr>
+                    <td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+
+        <tr>
+        <tr>
+            <td>Password</td>
+            <td>{{form.password}}</td>
+        </tr>
+        <tr>
+                    <td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+
+        <tr>
+          <tr>
+              <td> </td>
+            <td colspan="2"><input type="submit" name="submit" value="Login"/></td>
+        </tr>
+    </table>
+</form>
+</body>
+<br>
+<br>
+<br>
+<br>
+    {% include "footer.html" %}
+</html>

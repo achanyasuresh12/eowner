@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+{% include "managerhomepage/managerheader.html" %}<br>
+<br>
+<br>
+
+<body bgcolor="pink">
+<form method="post">
+    {% csrf_token %}
+     <h1 align="center">Purchase</h1>
+    <table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+        <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+        <tr>
+            <td>
+                Invoice No:
+            </td>
+            <td>
+                {{ invs }}
+            </td>
+        </tr>
+        <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+        <tr>
+            <td>
+                Item Name:
+            </td>
+            <td>
+                {{ form.itemname }}
+            </td>
+        </tr>
+        <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+        <tr>
+            <td>
+                Quantity :
+            </td>
+            <td>
+                {{ form.itemquantity }}
+
+            </td>
+        </tr>
+        <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+        <tr>
+            <td>
+                Basic Rate:
+            </td>
+            <td>
+                {{ form.itembasicrate }}
+            </td>
+        </tr>
+        <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" name="submit" value="INSERT">
+            </td>
+        </tr>
+    </table>
+</form>
+{% for obj in data %}
+     <table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+         <tr><td>Id</td><td>{{ obj.id }}</td></tr>
+         <tr><td>Invoice no</td><td>{{ invs }}</td></tr>
+         <tr><td>Name</td><td>{{ obj.itemname }}</td></tr>
+         <tr><td>Quantity</td><td>{{ obj.itemquantity }}</td></tr>
+         <tr><td>Basic rate</td><td>{{ obj.itembasicrate }}</td></tr>
+         <tr><td>Total</td><td>{{ obj.itemunittotal }}</td></tr>
+
+    {% endfor %}
+</table>
+</body>
+{% include "footer.html" %}
+</html>

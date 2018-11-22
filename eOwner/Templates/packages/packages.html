@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {{% include "managerhomepage/managerheader.html" %}
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    <h3 align="center">PACKAGES</h3>
+    <table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+        <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+        <tr>
+            <td>
+                Name :
+            </td>
+            <td>
+                {{ form.name }}
+            </td>
+        </tr>
+        <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+        <tr>
+            <td>
+                 Duration :
+
+            </td>
+            <td>
+                {{ form.duration }}
+            </td>
+        </tr>
+<tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+        <tr>
+            <td>
+                  Seat Count :
+            </td>
+            <td>
+                 {{ form.seatcount }}
+            </td>
+        </tr>
+        <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+        <tr>
+            <td>
+                Rate :
+            </td>
+            <td>
+                 {{ form.rate }}
+            </td>
+        </tr>
+        <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+        <tr>
+            <td>
+                Description :
+            </td>
+            <td>
+                 {{ form.description }}
+            </td>
+        </tr>
+        <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" name="submit" value="INSERT">
+
+                <input type="submit" name="submit" value="RESET">
+            </td>
+        </tr>
+    </table>
+</form>
+ {% for obj in data %}
+<table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+    <tr><td>Packege id</td><td>{{ obj.id }}</td></tr>
+    <tr> <td>Packege Name</td><td>{{ obj.name }}</td></tr>
+    <tr><td>Duration </td><td>{{ obj.duration }}</td></tr>
+    <tr><td>Seat Count</td><td>{{ obj.seatcount }}</td></tr>
+    <tr><td>Rate</td><td>{{ obj.rate }}</td></tr>
+    <tr><td>Description </td><td>{{ obj.description }}</td></tr>
+    <tr><td><a href="{% url 'packages:edit_packg' pk=obj.id %}">Edit</a></td>
+            <td><a href="{% url 'packages:delete_packg' pk=obj.id %}">Delete</a></td></tr>
+    {% endfor %}
+</table>
+</body>
+<br>
+<br>
+
+{% include "footer.html" %}
+</html>

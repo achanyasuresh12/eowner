@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    <h1 align="center">BUS INFO</h1>
+    <table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+        <tr>
+            <td>
+                Name :
+            </td>
+            <td>
+                {{ form.name }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Dropping Points
+            </td>
+            <td>
+                {{ form.dropping_points }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" name="submit" value="INSERT">
+            </td>
+            <td>
+                <input type="submit" name="submit" value="RESET">
+            </td>
+        </tr>
+    </table>
+</form>
+{% for obj in data %}
+<table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+    <tr><td>Bus id</td><td>{{ obj.id }}</td></tr>
+    <tr><td>Bus Name</td><td>{{ obj.name }}</td></tr>
+    <tr><td>Dropping Points</td><td>{{ obj.dropping_points }}</td>
+    <tr><td><a href="{% url 'businfo:edit_businfo' pk=obj.id %}">Edit</a></td>
+    <td><a href="{% url 'businfo:delete_businfo' pk=obj.id %}">Delete</a></td></tr>
+    {% endfor %}
+</table>
+</body>
+</html>

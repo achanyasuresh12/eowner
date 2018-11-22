@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     {% include "managerloginpage/managerloginheader.html" %}
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    <h3 align="center">Managers Login </h3>
+                <table align="center" width="30%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 15px 0 rgba(0,0,0,0.19)">
+                      <h1 align="center" Manager Login Here></h1>
+                    <tr>
+                    <td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+
+        <tr>
+                    </tr>
+                    <tr>
+                        <td>
+                            User Name :
+                        </td>
+                        <td>
+                            {{ form.username }}
+                        </td>
+                    </tr>
+                    <tr>
+                    <td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+
+        <tr>
+
+                    <tr>
+                        <td>
+                            Password :
+                        </td>
+                        <td>
+                            {{ form.password }}
+                        </td>
+
+                    </tr>
+                     <tr>
+                    <td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+
+        <tr>
+                    <tr>
+                        <td>
+
+                        </td>
+                        <td>
+                            <input type="submit" name="summit" value="LOGIN">
+                        </td>
+                    </tr>
+                </table>
+</form>
+
+</body>
+<br>
+<br>
+<br>
+<br>
+
+  {% include "footer.html" %}
+</html>

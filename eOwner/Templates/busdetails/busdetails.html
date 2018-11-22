@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% include "managerhomepage/managerheader.html" %}
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    <h1 align="center">BUS DETAILS</h1>
+    <table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+        <tr>
+                    <td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+
+        <tr>
+        <tr>
+            <td>
+                Name :
+            </td>
+            <td>
+                {{ form.name }}
+            </td>
+        </tr>
+        <tr>
+                    <td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+
+        <tr>
+        <tr>
+            <td>
+                Registration Number :
+
+            </td>
+            <td>
+                {{ form.regno }}
+            </td>
+        </tr>
+        <tr>
+                    <td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+
+        <tr>
+
+        <tr>
+            <td>
+                Permit Number :
+            </td>
+            <td>
+                 {{ form.permitno }}
+            </td>
+        </tr>
+        <tr>
+                    <td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+
+        <tr>
+        <tr>
+            <td>
+                Seat :
+            </td>
+            <td>
+                 {{ form.seat }}
+            </td>
+        </tr>
+        <tr>
+                    <td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+
+        <tr>
+        <tr>
+            <td>
+                Source :
+            </td>
+            <td>
+                 {{ form.source }}
+            </td>
+        </tr>
+        <tr>
+                    <td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+
+        <tr>
+        <tr>
+            <td>
+                Destination :
+            </td>
+            <td>
+                 {{ form.destination }}
+            </td>
+        </tr>
+        <tr>
+                    <td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+
+        <tr>
+        <tr>
+            <td>
+                Description :
+            </td>
+            <td>
+                {{ form.description }}
+            </td>
+        </tr>
+        <tr>
+                    <td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+
+        <tr>
+        <tr>
+            <td>
+                Arrival Time :
+            </td>
+            <td>
+                {{ form.arrival_time }}
+            </td>
+        </tr>
+        <tr>
+                    <td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+
+        <tr>
+        <tr>
+            <td>
+                Departure Time :
+            </td>
+            <td>
+                {{ form.departure_time }}
+            </td>
+        </tr>
+        <tr>
+                    <td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+
+        <tr>
+        <tr>
+            <td>
+                Seat Order
+            </td>
+            <td>
+                {{ form.seatorder }}
+            </td>
+        </tr>
+        <tr>
+                    <td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+
+        <tr>
+        <tr>
+        <td></td>
+            <td>
+                <input type="submit" name="submit" value="INSERT">
+
+                <input type="submit" name="submit" value="RESET">
+            </td>
+        </tr>
+    </table>
+</form>
+{% for obj in data %}
+<table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+    <tr><td>Bus id</td><td>{{ obj.id }}</td></tr>
+    <tr><td>Bus Name</td><td>{{ obj.name }}</td></tr>
+    <tr><td>Registration Number</td><td>{{ obj.regno }}</td></tr>
+    <tr>  <td>Permit Number</td><td>{{ obj.permitno }}</td></tr>
+    <tr>  <td>Seat </td><td>{{ obj.seat }}</td></tr>
+    <tr>  <td>Source</td><td>{{ obj.source }}</td></tr>
+    <tr>  <td>Destination</td><td>{{ obj.destination }}</td></tr>
+    <tr>  <td>Description</td><td>{{ obj.description }}</td></tr>
+    <tr>  <td>Arrival Time</td><td>{{ obj.arrival_time }}</td></tr>
+    <tr>  <td>Departure Time</td><td>{{ obj.departure_time }}</td></tr>
+    <tr>   <td>Seat Order</td><td>{{ obj.seatorder }}</td></tr>
+    <tr><td><a href="{% url 'busdetails:edit_busdetails' pk=obj.id %}">Edit</a></td>
+    <td><a href="{% url 'busdetails:delete_busdetails' pk=obj.id %}">Delete</a></td></tr>
+
+    {% endfor %}
+</table>
+</body>
+{% include "footer.html" %}
+</html>

@@ -1,0 +1,141 @@
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+   {% include "mgregistration/adminheader.html" %}
+</head>
+<body>
+<form method="post">
+    {% csrf_token %}
+    <h3 align="center">Manager Registration</h3>
+        <table align="center" width="50%" style="box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19)">
+            <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+        <tr>
+            <td>
+                Name :
+            </td>
+            <td>
+                {{ form.mgrname }}
+            </td>
+        </tr>
+            <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+        <tr>
+            <td>
+                House :
+            </td>
+            <td>
+                {{ form.mgrhouse}}
+            </td>
+        </tr>
+            <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+        <tr>
+            <td>
+                Place :
+            </td>
+            <td>
+                {{ form.mgrplace }}
+            </td>
+        </tr>
+            <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+        <tr>
+            <td>
+                City :
+            </td>
+            <td>
+                {{ form.mgrcity }}
+            </td>
+        </tr>
+            <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+        <tr>
+            <td>
+                Email :
+            </td>
+            <td>
+                {{ form.mgremail }}
+            </td>
+        </tr>
+            <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+            <tr>
+            <td>
+                Gender :
+            </td>
+            <td>
+                {{ form.mgrgender }}
+            </td>
+        </tr>
+            <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+            <tr>
+            <td>
+                Date Of Birth :
+            </td>
+            <td>
+                {{ form.mgrdob }}
+            </td>
+        </tr>
+            <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+            <tr>
+
+        </tr>
+            <tr>
+            <td>
+                Contact :
+            </td>
+            <td>
+                {{ form.mgrcontact }}
+            </td>
+        </tr>
+            <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+            <tr>
+            <td>
+                Username :
+            </td>
+            <td>
+                {{ form.mgrusername }}
+            </td>
+        </tr>
+            <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+            <tr>
+            <td>
+                Password :
+            </td>
+            <td>
+                {{ form.mgrpassword }}
+            </td>
+        </tr>
+            <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+            <tr>
+            <td>
+                Date Of Join :
+            </td>
+            <td>
+                {{ form.mgrdate_of_join }}
+            </td>
+        </tr>
+            <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+
+            <tr>
+                <td>
+                    Qualification :
+                </td>
+                <td>
+                    {{ form.mgrqualification }}
+                </td>
+            </tr>
+            <tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr><tr><td></td></tr>
+
+
+        <tr>
+            <td>
+
+            </td>
+            <td>
+                <input type="submit" name="submit" value="Register" >
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+    {% include "footer.html" %}
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     {% include "managerhomepage/managerheader.html" %}
+</head>
+<br>
+<h3>Manager Home Page </h3>
+
+<a href="{% url 'busdetails:busdetails_forms' %}">Bus Details</a><br>
+<a href="{% url 'dailyrepo:dailyreports_forms' %}">Daily Report</a><br>
+<a href="{% url 'packages:packages_forms' %}">Packages</a><br>
+<a href="{% url 'state:state_forms' %}">States</a><br>
+
+<a href="{% url 'purchases:purchases_forms' %}">Purchase</a><br>
+<a href="{% url 'viewcomplaint:viewcomplaint_forms' %}">View Complaint</a><br>
+
+
+
+
+
+</body>
+{% include "footer.html" %}
+</html>
